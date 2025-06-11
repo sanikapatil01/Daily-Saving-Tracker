@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="loginPage">
+    <h2>Create Account || Login</h2>
+    <div class="page">
+    <form id="authForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <button  id="loginBtn"  type="submit">Login</button>
+    </form>
+    </div>
+    </div>
+    <div class="info">
+        <p>Create your own username and password.</p>
+    </div>
+
+    <script>
+        document.getElementById("authForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let users = JSON.parse(localStorage.getItem("users")) || {};
+
+            if (!users[username]) {
+                users[username] = { password, records: [] };
+                localStorage.setItem("users", JSON.stringify(users));
+            }
+
+            if (users[username].password === password) {
+                localStorage.setItem("currentUser", username);
+                window.location.href = "index.html";
+            } else {
+                alert("Incorrect password.");
+            }
+        });
+    </script>
+</body>
+</html>
