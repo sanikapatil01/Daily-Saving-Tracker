@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Savings Tracker</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <button id="logoutBtn">Logout ⏻</button>
+    <h1>Daily Savings Tracker 💰</h1>
+
+    <h2 id="welcomeMessage">Welcome, <span id="userDisplay"></span>!</h2>
+    
+
+    </header>
+
+    <div class="box">
+    <form id="savingsForm">
+
+        <div class="item">
+        <label for="date">Date :</label>
+        <input type="date" id="date" required>
+        </div>
+        <div class="item">
+        <label for="day">Day :</label>
+        <input type="text" id="day" required>
+        </div>
+        <div class="item">
+        <label for="losses">Amount Spent :</label>
+        <input type="number" id="losses" step="0.01" required>
+        </div>
+         <div class="item">
+        <label for="reason">Purpose : </label>
+        <input type="text" id="reason">
+        </div>
+        <div class="item">
+         <label for="earnings">Savings :</label>
+        <input type="number" id="earnings" step="0.01" >
+        </div>
+        <div class="item">
+        <button  id="submitBtn"  type="submit">Save</button>
+        </div>
+    </form>
+    </div>
+   
+    <div class="btn">
+    <button id="viewPrevRecordsBtn">View All Records</button>
+    </div>
+
+    <script>
+        let currentUser = localStorage.getItem("currentUser");
+
+        if (!currentUser) {
+            window.location.href = "login.html";
+        } else {
+            document.getElementById("userDisplay").innerText = currentUser;
+        }
+
+        document.getElementById("logoutBtn").addEventListener("click", function() {
+            localStorage.removeItem("currentUser");
+            window.location.href = "login.html";
+        });
+
+        document.getElementById("savingsForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let date = document.getElementById("date").value;
+            let day = document.getElementById("day").value;
+            let earnings = document.getElementById("earnings").value;
+            let losses = document.getElementById("losses").value;
+            let reason = document.getElementById("reason").value;
+
+            let users = JSON.parse(localStorage.getItem("users")) || {};
+            users[currentUser].records.push({ date, day, earnings, losses, reason });
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Record saved successfully!");
+        });
+
+        document.getElementById("viewPrevRecordsBtn").addEventListener("click", function() {
+            window.location.href = "table.html";
+        });
+    </script>
+</body>
+</html>

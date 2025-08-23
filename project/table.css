@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+       table {
+            width: 100%;
+            border-collapse: collapse;
+             box-shadow: 0 0 15px rgba(25, 7, 37, 0.7);
+        }
+        th, td {
+            border: 1px solid #2f168c;
+            padding: 8px;
+            text-align: center;
+            color:rgb(1, 6, 11);
+             font-family: "Ubuntu", sans-serif;
+              box-shadow: 0 0 5px rgba(7, 3, 18, 0.7);
+        }
+        th {
+            
+           color:#46078a;
+            font-family: "Ubuntu", sans-serif;
+        }
+        .delete-btn {
+            background-color: rgba(226, 19, 19, 0.933);
+             color:rgb(173, 185, 194);
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+            cursor: pointer;
+             font-family: "Ubuntu", sans-serif;
+             transition: all 0.3s ease-in-out;
+        }
+        .delete-btn:hover{
+             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(38, 9, 110, 0.7);
+        }
+        h3{
+            text-align: center;
+            font-size:1.7rem;
+            font-weight:500;
+            color:#051c35;
+             font-family: "Ubuntu", sans-serif;
+        }
+        .addBtn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+        #addEntryBtn{
+            padding:10px;
+            border-radius: 5px;
+            background-color: rgb(15, 5, 49);
+             color:#f0f0f0;
+             font-family: "Ubuntu", sans-serif;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        #addEntryBtn:hover{
+           transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(93, 60, 178, 0.7);
+         }
+        body{
+     background: linear-gradient(300deg, #61236d, #11aaa2, #5fb86a);
+    background-size:180% 180%;
+    animation: header-animate 25s ease infinite;
+}
+
+@keyframes header-animate{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}

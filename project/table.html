@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saved Records</title>
+    <link rel="stylesheet" href="table.css">
+
+</head>
+<body>
+
+    <div class="tableData">
+    <h3>All Saved Records</h3>
+    <br>
+    <table id="prevRecordsTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Amount Spent</th>
+                <th>Purpose ($)</th>
+                <th>Savings</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+
+    <br>
+    <div class="addBtn">
+    <button id="addEntryBtn">Add More.</button>
+    </div>
+
+    <script>
+        let currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+            window.location.href = "login.html";
+        }
+
+        let users = JSON.parse(localStorage.getItem("users")) || {};
+        let records = users[currentUser]?.records || [];
+
+        let tableBody = document.getElementById("prevRecordsTable").getElementsByTagName("tbody")[0];
+        tableBody.innerHTML = "";
+
+        records.forEach((record, index) => {
+            let row = tableBody.insertRow();
+            row.innerHTML = `
+                <td>${record.date}</td>
+                <td>${record.day}</td>
+                <td>${record.earnings}</td>
+                <td>${record.losses}</td>
+                <td>${record.reason}</td>
+                <td><button class="delete-btn" onclick="deleteRecord(${index})">Delete</button></td>
+            `;
+        });
+
+        function deleteRecord(index) {
+            users[currentUser].records.splice(index, 1);
+            localStorage.setItem("users", JSON.stringify(users));
+            location.reload();
+        }
+
+        document.getElementById("addEntryBtn").addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>

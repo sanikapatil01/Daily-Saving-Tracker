@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+header h1{
+    font-size:3rem;
+    font-family: "Ubuntu", sans-serif;
+    height:25vh;
+    text-align:center;
+    position: relative;
+    color:rgb(21, 50, 74);
+}
+h1{
+    margin-top:100px;
+    position: absolute;
+}
+header h2{
+     font-family: "Ubuntu", sans-serif;
+    height:12vh;
+    margin-top: 3rem;
+    color:rgb(21, 50, 74);
+}
+#logoutBtn{
+    position: absolute;
+    font-family: "Ubuntu", sans-serif;
+    text-align: right;
+    top: 10px; 
+    right:10px;
+   color:rgb(21, 50, 74);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+
+}
+#logoutBtn:hover{
+      transform: scale(0.98);
+      color:rgb(115, 48, 48);
+}
+.box{
+    max-width: 400px;
+    margin:20px auto;
+    margin-top: 5rem;
+    padding:30px;
+    border:1px solid black;
+    border-radius: 8px;
+    background-color: #f9f9f900;
+     box-shadow: 0 0 10px rgba(23, 8, 50, 0.7);
+    
+}
+.box:hover{
+        transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(23, 8, 50, 0.7);
+}
+.items{
+    display:flex;
+    flex-direction: column;
+    margin-bottom:10px;
+
+
+    
+}
+label{
+    font-size:1rem;
+    margin-bottom:5px;
+   color:rgb(21, 50, 74);
+    font-family: "Ubuntu", sans-serif;
+    
+
+}
+input, button{
+    width:100%;
+    padding:10px;
+    font-family: "Ubuntu", sans-serif;
+    font-size:0.9rem;
+    background-color:transparent;
+    color:rgb(19, 56, 88);
+    border: 1px solid rgb(3, 41, 50);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+}
+input:hover{
+        transform: scale(1.02);
+  box-shadow: 0 0 5px rgba(23, 8, 50, 0.7);
+}
+#submitBtn{
+    margin-top:1rem;
+    background-color:#24054f;
+    color:#2ea4cc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+}
+#submitBtn:hover{
+    transform: scale(0.9);
+  box-shadow: 0 0 10px rgba(23, 8, 50, 0.7);
+  background-color:rgb(22, 205, 205);
+  color:#18022f;
+}
+
+@media(min-width: 600px){
+    .item{
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    label{
+        width:120px;
+        text-align: left;
+    }
+    input{
+        flex:1;
+    }
+}
+.btn{
+    display:flex;
+    align-items: center;
+    margin-top:5rem;
+    
+
+}
+#viewPrevRecordsBtn{
+    padding: 20px;
+    background-color:transparent;
+    font-family: "Ubuntu", sans-serif;
+    font-weight:700;
+    color:#5382c3;
+}
+#viewPrevRecordsBtn:hover{
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(23, 8, 50, 0.7);
+  color:aliceblue
+}
+body{
+    background: linear-gradient(300deg, #61236d, #11aaa2, #5fb86a);
+    background-size:180% 180%;
+    animation: header-animate 10s ease infinite;
+}
+
+@keyframes header-animate{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+#viewPrevRecordsBtn{
+    background: linear-gradient(300deg, #2ea4cc, #18022f, #350875);
+    background-size:180% 180%;
+    animation: header-animate 10s ease infinite;
+}
+
+@keyframes header-animate{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
